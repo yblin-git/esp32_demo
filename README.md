@@ -2,7 +2,7 @@
     此项目把esp-idf作为submodule添加到工程里的，所以需要以下步骤
 1. 首先下载此工程
 ```
-    git clone https://gitee.com/xuhongv/esp-idf.git
+    git clone https://github.com/yblin-git/esp32_demo.git
 ```
 2. 更新所有子项目
 ```
