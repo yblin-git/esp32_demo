@@ -9,6 +9,7 @@
     git submodule update --init --recursive
 ```
 3. 根据官方文档，搭建环境
+    根目录下dep/esp-idf目录就是官方的sdk,可根据下面链接搭IDF的环境
     https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/get-started/linux-macos-setup.html
 4. 执行./build.sh
     执行后会生成build_esp32
