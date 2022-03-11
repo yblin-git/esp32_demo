@@ -256,6 +256,14 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
+# Example Configuration
+#
+CONFIG_ESP_WIFI_SSID="yblintest"
+CONFIG_ESP_WIFI_PASSWORD="1234567890"
+CONFIG_ESP_MAXIMUM_RETRY=5
+# end of Example Configuration
+
+#
 # Compiler options
 #
 CONFIG_COMPILER_OPTIMIZATION_DEFAULT=y
