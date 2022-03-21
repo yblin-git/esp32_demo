@@ -2,7 +2,7 @@
  * @Author: yblin
  * @Date: 2022-03-10 16:40:32
  * @LastEditors: yblin
- * @LastEditTime: 2022-03-11 13:21:02
+ * @LastEditTime: 2022-03-21 15:25:13
  * @Description: 
  */
 #include "esp_log.h"
@@ -52,9 +52,9 @@ static void event_bus_callback(void* handler_args, esp_event_base_t base, int32_
     if(base == APP_EVENTS){
         // Event_t event = *((Event_t*) event_data);
         ESP_LOGI(TAG, "callback %s id: %d ", base, id);
-        xQueueSend(bsp_task_queue, ((Event_t*) event_data), NULL);
+        xQueueSend(bsp_task_queue, ((Event_t*) event_data), 0);
     }
-
+}
 /*************************************外部函数**********************************/
 void bsp_task_init(){
     ESP_LOGI(TAG, "bsp_task_init");

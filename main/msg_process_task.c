@@ -2,7 +2,7 @@
  * @Author: yblin
  * @Date: 2022-03-10 16:40:32
  * @LastEditors: yblin
- * @LastEditTime: 2022-03-11 13:19:45
+ * @LastEditTime: 2022-03-21 15:24:06
  * @Description: 
  */
 #include "esp_log.h"
@@ -40,7 +40,7 @@ static void event_bus_callback(void* handler_args, esp_event_base_t base, int32_
     if(base == APP_EVENTS){
         // Event_t event = *((Event_t*) event_data);
         ESP_LOGI(TAG, "callback %s id: %d ", base, id);
-        xQueueSend(msg_process_task_queue, ((Event_t*) event_data), NULL);
+        xQueueSend(msg_process_task_queue, ((Event_t*) event_data), 0);
     }
     // else if(base == WIFI_EVENT){
 
