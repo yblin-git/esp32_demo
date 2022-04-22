@@ -2,7 +2,7 @@
  * @Author: yblin
  * @Date: 2022-03-10 16:40:32
  * @LastEditors: yblin
- * @LastEditTime: 2022-03-21 15:25:13
+ * @LastEditTime: 2022-04-22 11:39:02
  * @Description: 
  */
 #include "esp_log.h"
@@ -64,7 +64,7 @@ void bsp_task_init(){
         return;
     }
     //在这里订阅需要的自定义（APP_EVENTS）消息和系统消息
-    ESP_ERROR_CHECK(evnet_bus_register(APP_EVENTS,TASK_ITERATION_EVENT,event_bus_callback));
+    ESP_ERROR_CHECK(evnet_bus_register(TASK_ITERATION_EVENT,event_bus_callback));
     // Create the application task with the same priority as the current task
     xTaskCreate(bsp_task_process, "bsp task_", BspTaskSTK_SIZE, NULL, BspTaskPRO, NULL);
 }

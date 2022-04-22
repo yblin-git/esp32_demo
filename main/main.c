@@ -2,7 +2,7 @@
  * @Author: yblin
  * @Date: 2022-03-02 10:34:19
  * @LastEditors: yblin
- * @LastEditTime: 2022-03-21 15:23:36
+ * @LastEditTime: 2022-04-22 11:39:27
  * @Description: 
  */
 /* esp_event (event loop library) basic example
@@ -45,7 +45,7 @@ static void task_event_source(void* args)
         Event_t event;
         event.id = TASK_ITERATION_EVENT;
         event.d.iteration.num = iteration;
-        ESP_ERROR_CHECK(evnet_bus_send(APP_EVENTS, event.id, &event, sizeof(Event_t), portMAX_DELAY));
+        ESP_ERROR_CHECK(evnet_bus_send(event.id, &event, sizeof(Event_t), portMAX_DELAY));
 
         vTaskDelay(pdMS_TO_TICKS(TASK_PERIOD));
     }

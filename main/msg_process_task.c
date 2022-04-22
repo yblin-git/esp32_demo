@@ -2,7 +2,7 @@
  * @Author: yblin
  * @Date: 2022-03-10 16:40:32
  * @LastEditors: yblin
- * @LastEditTime: 2022-03-21 15:24:06
+ * @LastEditTime: 2022-04-22 11:39:09
  * @Description: 
  */
 #include "esp_log.h"
@@ -59,7 +59,7 @@ void msg_process_task_init(){
     }
 
     //在这里订阅需要的自定义（APP_EVENTS）消息和系统消息（如：WIFI_EVENTS IP_EVENTS）
-    ESP_ERROR_CHECK(evnet_bus_register(APP_EVENTS,TASK_ITERATION_EVENT,event_bus_callback));
+    ESP_ERROR_CHECK(evnet_bus_register(TASK_ITERATION_EVENT,event_bus_callback));
 
     // Create the application task with the same priority as the current task
     xTaskCreate(msg_process_task_process, "bsp task_", MsgProcessTaskSTK_SIZE, NULL, MsgProcessTaskPRO, NULL);

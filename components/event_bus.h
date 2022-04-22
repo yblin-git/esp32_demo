@@ -2,7 +2,7 @@
  * @Author: yblin
  * @Date: 2022-03-10 16:40:32
  * @LastEditors: yblin
- * @LastEditTime: 2022-03-11 11:35:43
+ * @LastEditTime: 2022-04-22 11:41:46
  * @Description: 
  */
 #ifndef COMPONENTS_EVENT_BUS_H_
@@ -61,14 +61,12 @@ typedef struct {
 
 void event_bus_init();
 
-esp_err_t evnet_bus_register(esp_event_base_t event_base,
-                                              int32_t event_id,
-                                              esp_event_handler_t event_handler);
+esp_err_t evnet_bus_register(int32_t event_id, esp_event_handler_t event_handler);
 
-esp_err_t evnet_bus_send(esp_event_base_t event_base, int32_t event_id,
+esp_err_t evnet_bus_send(int32_t event_id,
         const void* event_data, size_t event_data_size, TickType_t ticks_to_wait);
 
-esp_err_t evnet_bus_isr_send(esp_event_base_t event_base, int32_t event_id,
+esp_err_t evnet_bus_isr_send(int32_t event_id,
         const void* event_data, size_t event_data_size, BaseType_t *task_unblocked);
 
 #ifdef __cplusplus
